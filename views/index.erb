@@ -1,13 +1,25 @@
+<!DOCTYPE html>
 <html>
 <header>
-  <h1> Welcome to Battle! </h1>
+  <title>Welcome to the Battle!</title>
 </header>
   <body>
+    <h1> Welcome to the Battle! </h1>
+    <br>
+    <br>
     <form action="/names" method="post">
-      Player 1 Name:<br>
-      <input type="text" name="player_1"><br>
-      Player 2 Name:<br>
-      <input type="text" name="player_2"><br>
+      <label for="player_1">
+        Player 1:
+        <input type="text" name="player_1">
+      </label>
+      <br>
+      <br>
+      <label for="player_2">
+        Player 2:
+        <input type="text" name="player_2">
+      </label>
+      <br>
+      <br>
       <input type="submit" value="Enter Battle">
     </form>
   </body>
