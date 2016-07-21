@@ -16,12 +16,12 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it "damages player" do
-      expect(noby).to receive(:damage_taken)
-      albie.attack(noby)
-    end
-  end
+#  describe '#attack' do
+#    it "damages player" do
+#      expect(noby).to receive(:damage_taken)
+#      albie.attack(noby)
+#    end
+#  end
 
   describe '#damage_taken' do
     it 'reduces hit points' do
