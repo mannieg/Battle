@@ -41,6 +41,11 @@ class Game
 
   def attack
     Attack.new(defending_player).execute
+    switcher
+  end
+
+  def both_alive?
+    @players.all? {|player| player.is_dead? == false }
   end
 
   private

@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
+  <link href="<%= url('stylesheets/main.css') %>" rel="stylesheet" type="text/css" />
   <header>
     <title>Battle: In Battle!</title>
   </header>
   <body>
     <h1><%= @game.player_1.name%> vs. <%= @game.player_2.name%></h1>
     <br />
+    <h2><%=@game.player_turn.name%> was hit!</h2>
     <br />
     <div>
-      <%= @game.player_turn.name%> has <%= @game.player_turn.hp %> hit points
-      <br>
-      <%= @game.defending_player.name%> has <%= @game.defending_player.hp%> hit points
-      <form action="/attack" method="get">
-      <button type="submit">Attack <%= @game.defending_player.name %></button>
-      </form>
+      It is <%= @game.player_turn.name %>'s turn
+    </div>
+    <br />
+    <div>
+      <%= @game.player_1.name%> has <%= @game.player_1.hp %> hit points
+      <br />
+      <br />
+      <%= @game.player_2.name%> has <%= @game.player_2.hp%> hit points
+      <br />
+      <br />
+      <% if @game.both_alive? %>
+        <form action="/attack" method="post">
+        <button class="button" type="submit">Attack <%= @game.defending_player.name %></button>
+        </form>
+      <% else %>
+        <%= @game.player_turn.name %> has lost the game!  
+      <% end %>
     </div>
   </body>
 </html>

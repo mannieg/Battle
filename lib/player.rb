@@ -8,7 +8,11 @@ class Player
   end
 
   def receive_damage damage
-    @hp -= damage
+    @hp -= damage if hp > 0
+  end
+
+  def is_dead?
+    hp <= 0
   end
 
 end

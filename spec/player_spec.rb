@@ -14,4 +14,22 @@ describe Player do
     end
   end
 
+  describe '#receive_damage' do
+    it 'changes hp by received damage' do
+      expect{ player_1.receive_damage(10) }.to change{ player_1.hp }.by(-10)
+    end
+
+    it 'not allow hp to drop below 0' do
+      player_1.receive_damage(100)
+      expect{ player_1.receive_damage(1) }.not_to change{ player_1.hp }
+    end
+  end
+
+  describe '#is_dead?' do
+    it 'returns the player is dead if 0 hp' do
+      allow(player_1).to receive(:hp).and_return(0)
+      expect(player_1.is_dead?).to be_truthy
+    end
+  end
+
 end

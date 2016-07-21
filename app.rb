@@ -1,4 +1,3 @@
-# THIS IS THE CONTROLLER
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
@@ -25,10 +24,9 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-  get '/attack' do
+  post '/attack' do
     @game.attack
-    @game.switcher
-    erb :attack
+    redirect '/play'
   end
 
 

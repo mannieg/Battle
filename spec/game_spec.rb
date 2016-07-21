@@ -11,6 +11,12 @@ describe Game do
       expect(player_2).to receive(:receive_damage)
       game.attack
     end
+
+    xit 'does not damage opponent if one player is dead' do
+      allow(player_1).to receive(:is_dead?).and_return(true)
+      expect(player_2).not_to receive(:receive_damage)
+      game.attack
+    end
   end
 
   context '#opponent_of' do
