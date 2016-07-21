@@ -1,12 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
 
-# Instead of storing player names as strings
-# in the session, store them as attributes of
-# instances of the Player class in global
-# variables (declared using $)
-
-
 class Battle < Sinatra::Base
 
   enable :sessions
@@ -21,14 +15,15 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    @name1 = $player1.return_name
-    @name2 = $player2.return_name
+    @name1 = $player1
+    @name2 = $player2
     erb(:play)
   end
 
   get '/attack' do
-    @name1 = $player1.return_name
-    @name2 = $player2.return_name
+    @name1 = $player1
+    @name2 = $player2
+    @name1.attack(@name2)
     erb :attack
   end
 
