@@ -15,9 +15,11 @@
     <br />
     <div>
       <%= @game.player_1.name%> has <%= @game.player_1.hp %> hit points
+      <progress value="<%= @game.player_1.hp %>" max="100"></progress>
       <br />
       <br />
       <%= @game.player_2.name%> has <%= @game.player_2.hp%> hit points
+      <progress value="<%= @game.player_2.hp%>" max="100"></progress>
       <br />
       <br />
       <% if @game.both_alive? %>
@@ -25,7 +27,7 @@
         <button class="button" type="submit">Attack <%= @game.defending_player.name %></button>
         </form>
       <% else %>
-        <%= @game.player_turn.name %> has lost the game!  
+        <%= @game.player_turn.name %> has lost the game!
       <% end %>
     </div>
   </body>
