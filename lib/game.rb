@@ -1,3 +1,5 @@
+require_relative 'attack'
+
 class Game
 
   def initialize(player_1, player_2)
@@ -37,9 +39,8 @@ class Game
     end
   end
 
-  def attack(opponent)
-  	damage = Kernel.rand(0..100)
-    opponent.receive_damage(damage)
+  def attack
+    Attack.new(defending_player).execute
   end
 
   private
