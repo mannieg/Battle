@@ -12,7 +12,7 @@
       <br>
       <%= @game.defending_player.name%> has <%= @game.defending_player.hp%> hit points
       <form action="/attack" method="get">
-      <button type="submit">Attack <%= @game.player_2.name %></button>
+      <button type="submit">Attack <%= @game.defending_player.name %></button>
       </form>
     </div>
   </body>
