@@ -1,8 +1,8 @@
-<h1>Player 1: <%= @name1.return_name %> vs Player 2: <%= @name2.return_name %></h1>
+<h1>Player 1: <%= @game.name1.return_name %> vs Player 2: <%= @game.name2.return_name %></h1>
 
 <div>
-<h2><%= @name1.return_name %> <%= @name1.hit_points %>HP
-<%= @name2.return_name %> <%= @name2.hit_points %>HP </h2>
+<h2><%= @game.name1.return_name %> <%= @game.name1.hit_points %>HP
+<%= @game.name2.return_name %> <%= @game.name2.hit_points %>HP </h2>
 </div>
 
 <form action="/attack">
