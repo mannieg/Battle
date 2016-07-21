@@ -31,14 +31,6 @@ class Game
     opponent_of(@player_turn)
   end
 
-  def switcher
-    if @player_turn == player_1
-      @player_turn = player_2
-    else
-      @player_turn = player_1
-    end
-  end
-
   def attack
     Attack.new(defending_player).execute
     switcher
@@ -52,6 +44,14 @@ class Game
 
   def opponent_of attacker
     @players.find {|player| player != attacker }
+  end
+
+  def switcher
+    if @player_turn == player_1
+      @player_turn = player_2
+    else
+      @player_turn = player_1
+    end
   end
 
 end
