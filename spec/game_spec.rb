@@ -17,12 +17,6 @@ describe Game do
     end
   end
 
-  describe '#current_turn' do
-    it "by default, set to name1" do
-      expect(game.current_turn).to eq name1
-    end
-  end
-
   describe '#turn_switcher' do
     it 'switches between players' do
       allow(name2).to receive(:damage_taken)
@@ -35,6 +29,14 @@ describe Game do
     it "damages player" do
       expect(name2).to receive(:damage_taken)
       game.attack
+    end
+  end
+
+  describe '#get_defender'do
+    it 'returns the defending player at the time' do
+      allow(name2).to receive(:damage_taken)
+      game.attack
+      expect(game.get_defender).to eq name2
     end
   end
 

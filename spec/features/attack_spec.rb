@@ -4,9 +4,16 @@ feature "Attack Player" do
     click_button "attack"
     expect(page).to have_content('Albie attacked Noby')
   end
+
   scenario 'expect players HP to be reduced' do
     sign_in_and_play
     click_button "attack"
     expect(page).to have_content('Noby has 50HP')
+  end
+
+  scenario "shows confirmation when opponent attacked" do
+    sign_in_and_play
+    click_button "attack"
+    expect(page).to have_content("Noby has been attacked!")
   end
 end
