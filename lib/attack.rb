@@ -11,7 +11,7 @@ class Attack
   private
 
   def random_damage
-    Kernel.rand(0..100)
+    Kernel.rand(0..10)
   end
 
 end
