@@ -6,6 +6,10 @@
   <h2><%= @game.name2.return_name %> has <%= @game.name2.hit_points %>HP</h2>
 </div>
 
-<!-- <form action="/play">
-  <input type="submit" value="switch player">
-</form> -->
+<div>
+  <h2><%= @game.name1.return_name %> has <%= @game.name1.hit_points %>HP</h2>
+</div>
+
+<form action="/play">
+  <input type="submit" value="return"/>
+</form>
